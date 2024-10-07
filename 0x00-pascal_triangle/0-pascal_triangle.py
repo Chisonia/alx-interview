@@ -1,15 +1,9 @@
 #!/usr/bin/python3
 
-# function to create pascal's triangle
-# n is number of rows
-# check if n is <=0 and return an empty list
-# create a list to hold the rows of the triangle
-# r is index of element in each row
-# create row with lenght r+1 uisng for loop
-# m is element in each row
-# update inner row element, with sum of elements above
-# add completed row to triangle and return triangle
+# This module is a function to creates pascal's triangle
+
 def pascal_triangle_recursive(n):
+    #This function creates a paschal triangle
     if n <= 0:
         return []
     if n == 1:
