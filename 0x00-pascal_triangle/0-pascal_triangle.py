@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # function to create pascal's triangle
 # n is number of rows
 # check if n is <=0 and return an empty list
