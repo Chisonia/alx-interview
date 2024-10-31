@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """Lockboxes module"""
 
+from collections import deque
+
 
 def canUnlockAll(boxes):
     # Initialize a set to keep track of opened boxes
     opened_boxes = set()
-    # A queue to hold boxes to explore (start with the first box)
-    queue = [0]
+    # A deque to hold boxes to explore (start with the first box)
+    queue = deque([0])
 
     while queue:
         # Get the current box to open
-        current_box = queue.pop(0)
+        current_box = queue.popleft()  # Use popleft for O(1) complexity
         # If the box has not been opened yet
         if current_box not in opened_boxes:
             # Mark the box as opened
@@ -36,3 +38,7 @@ if __name__ == "__main__":
 
     boxes3 = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
     print(canUnlockAll(boxes3))  # False
+
+    # Test case with 1000 boxes with all keys in each box
+    boxes_large = [[i for i in range(1000)] for _ in range(1000)]
+    print(canUnlockAll(boxes_large))  # True
