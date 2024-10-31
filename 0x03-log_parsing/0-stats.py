@@ -8,6 +8,7 @@ import re
 
 
 def signal_handler(sig, frame):
+    """This function handles signal"""
     print_metrics()
     sys.exit(0)
 
@@ -39,6 +40,7 @@ line_count = 0
 
 
 def print_metrics():
+    """This function prints metrics"""
     print(f"File size: {total_file_size}")
     for status_code in sorted(status_counts.keys()):
         count = status_counts[status_code]
@@ -47,6 +49,7 @@ def print_metrics():
 
 
 def process_line(line):
+    """This function proces line"""
     global total_file_size, line_count
 
     match = line_pattern.match(line)
@@ -67,6 +70,7 @@ def process_line(line):
 
 
 def read_lines():
+    """This function reads lines"""
     for line in sys.stdin:
         process_line(line)
 
