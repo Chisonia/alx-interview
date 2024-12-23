@@ -2,6 +2,7 @@
 '''The Queen module'''
 import sys
 
+
 def is_safe(row, col, board):
     """
     Check if it's safe to place a queen at the given row and column
@@ -11,6 +12,7 @@ def is_safe(row, col, board):
         if board[r] == col or abs(board[r] - col) == abs(r - row):
             return False
     return True
+
 
 def solve_n_queens(row, board, solutions):
     """
@@ -29,6 +31,7 @@ def solve_n_queens(row, board, solutions):
             solve_n_queens(row + 1, board, solutions)
             # Backtrack
             board[row] = -1
+
 
 def main():
     """
@@ -59,6 +62,7 @@ def main():
     # Print all solutions
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     main()
